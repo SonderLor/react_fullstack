@@ -20,6 +20,11 @@ const Header = () => {
             <Button color="inherit" component={Link} to="/create-post">
               Create Post
             </Button>
+            {user.role === 'admin' && (
+              <Button color="inherit" component={Link} to="/admin/users">
+                Admin
+              </Button>
+            )}
           </>
         )}
         {isAuthenticated ? (

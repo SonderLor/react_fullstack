@@ -44,7 +44,7 @@ const Posts = () => {
           {posts.map((post) => (
             <ListItem key={post.id}>
               <ListItemText primary={post.title} secondary={post.content} />
-              {user && user.id === post.userId && (
+              {user && (user.id === post.userId || user.role === "admin") && (
                 <>
                   <Button component={Link} to={`/edit-post/${post.id}`} variant="outlined" sx={{ mr: 2 }}>
                     Edit
